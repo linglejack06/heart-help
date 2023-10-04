@@ -1,0 +1,1 @@
+const defaultPercent = 0.0025; // american average 805k/320M

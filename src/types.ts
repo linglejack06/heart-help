@@ -19,3 +19,18 @@ export interface Diseases {
   smoking: boolean;
   ckd: boolean;
 }
+
+export interface Pain {
+  shortnessOfBreath: boolean;
+  nausea: boolean;
+  sweating: boolean;
+  leftArmPain: boolean;
+  jawPain: boolean;
+  chestPain: ChestPain | null;
+}
+export interface ChestPain {
+  sharp: boolean; // unlikely
+  dull: boolean; // likely
+  pressure: boolean; // likely
+  stabbing: boolean; // unlikely
+}
