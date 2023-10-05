@@ -1,4 +1,4 @@
-import { ActivityLevel, Diseases, Gender } from "../../types"
+import { ActivityLevel, Diseases, Gender, Risks } from "../../types"
 
 const ageCalc = (age: number): number => {
   if(age < 25) {
@@ -65,11 +65,11 @@ const activityCalc = (activity: ActivityLevel): number => {
       return 1;
   }
 }
-const riskCalculator = (age: number, gender: Gender, diseases: Diseases, activity: ActivityLevel): number => {
-  const ageRisk = ageCalc(age);
-  const genderRisk = genderCalc(gender);
-  const diseaseRisk = diseaseCalc(diseases);
-  const activityRisk = activityCalc(activity);
+const riskCalculator = (risks: Risks): number => {
+  const ageRisk = ageCalc(risks.age);
+  const genderRisk = genderCalc(risks.gender);
+  const diseaseRisk = diseaseCalc(risks.diseases);
+  const activityRisk = activityCalc(risks.activity);
   return ageRisk + genderRisk + diseaseRisk + activityRisk;
 };
 export default riskCalculator;

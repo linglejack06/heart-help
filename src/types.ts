@@ -20,7 +20,7 @@ export interface Diseases {
   ckd: boolean;
 }
 
-export interface Pain {
+export interface Symptoms {
   shortnessOfBreath: boolean;
   nausea: boolean;
   sweating: boolean;
@@ -33,4 +33,10 @@ export interface ChestPain {
   dull: boolean; // likely
   pressure: boolean; // likely
   stabbing: boolean; // unlikely
+}
+export interface Risks {
+  activity: ActivityLevel,
+  diseases: Diseases,
+  gender: Gender,
+  age: number,
 }

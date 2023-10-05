@@ -1,44 +1,8 @@
 import {test, expect} from "@jest/globals";
 import { ageCalc, diseaseCalc, genderCalc } from "./risk-calculator";
-import { Diseases, Gender } from "../../types";
+import { Gender } from "../../types";
+import { noDiseases, someDiseases, someDiseases2, allDiseases } from "../testValues";
 
-
-const noDiseases: Diseases = {
-  cad: false,
-  pad: false,
-  stroke: false,
-  diabetes: false,
-  hbp: false,
-  smoking: false,
-  ckd: false,
-} // returns 1;
-const someDiseases: Diseases = {
-  cad: true,
-  pad: false,
-  stroke: true,
-  diabetes: false,
-  hbp: false,
-  smoking: false,
-  ckd: true,
-} // returns 2.15
-const allDiseases: Diseases = {
-  cad: true,
-  pad: true,
-  stroke: true,
-  diabetes: true,
-  hbp: true,
-  smoking: true,
-  ckd: true,
-} // returns 3.5;
-const someDiseases2: Diseases = {
-  cad: false,
-  pad: false,
-  stroke: false,
-  diabetes: true,
-  hbp: true,
-  smoking: true,
-  ckd: false,
-} // returns 1.95
 test("age risk is correctly calculated", () => {
   expect(ageCalc(15)).toBe(0.02);
   expect(ageCalc(27)).toBe(0.25);
