@@ -1,7 +1,7 @@
 import { ActivityLevel, Risks, Symptoms, Gender } from "../types";
 import painCalculator from "./pain-calculator/pain-calculator";
 import riskCalculator from "./risk-calculator/risk-calculator";
-import { allDiseases, noSymptoms, someDiseases2, symptomsWithChestPain, symptomsWithoutChestPain } from "./testValues";
+import { allDiseases, symptomsWithChestPain } from "./testValues";
 
 const DEFAULT_PERCENT = 4;
 
