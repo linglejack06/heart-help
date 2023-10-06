@@ -40,3 +40,11 @@ export interface Risks {
   gender: Gender,
   age: number,
 }
+export interface RiskAction {
+  type: "activity"|"diseases"|"gender"|"age",
+  payload: Diseases|Gender|ActivityLevel|number
+}
+
+export interface ReactChildrenProps {
+  children: React.ReactNode
+}

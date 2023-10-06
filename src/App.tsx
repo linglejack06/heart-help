@@ -1,8 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import { percentage } from "./calculator"
 import PainForm from "./components/PainForm"
 import RiskForm from "./components/RiskForm"
-import Results from "./components/results"
+import Results from "./components/Results"
 import Welcome from "./components/Welcome"
 
 function App() {
