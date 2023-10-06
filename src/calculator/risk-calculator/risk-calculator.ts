@@ -1,14 +1,14 @@
 import { ActivityLevel, Diseases, Gender, Risks } from "../../types"
 
-const ageCalc = (age: number): number => {
+const ageCalc = (age: number): number => { // lower factor returning
   if(age < 25) {
     return 0.02;
   } else if (age < 45) {
-    return 0.25;
+    return 0.5;
   } else if (age < 65) {
-    return 1.00;
+    return 1.5;
   } else if (age < 80) {
-    return 1.25;
+    return 2;
   } else {
     return 1.5;
   }
@@ -30,24 +30,24 @@ const genderCalc = (gender: Gender): number => {
 const diseaseCalc = (diseases: Diseases): number => {
   let diseaseFactor: number = 1;
   if (diseases.cad === true) {
-    diseaseFactor += 0.5;
+    diseaseFactor += 0.8;
   }
   if (diseases.pad === true) {
-    diseaseFactor += 0.4;
+    diseaseFactor += 0.6;
   }
   if (diseases.stroke === true) {
-    diseaseFactor += 0.45;
+    diseaseFactor += 0.6;
   }
   if (diseases.diabetes === true) {
-    diseaseFactor += 0.35;
+    diseaseFactor += 0.5;
   } else if (diseases.hbp === true) {
-    diseaseFactor += 0.1;
+    diseaseFactor += 0.3;
   }
   if (diseases.smoking === true) {
     diseaseFactor += 0.6;
   }
   if (diseases.ckd === true) {
-    diseaseFactor += 0.2;
+    diseaseFactor += 0.4;
   }
   return diseaseFactor;
 }
@@ -60,7 +60,7 @@ const activityCalc = (activity: ActivityLevel): number => {
     case "average":
       return 1;
     case "below average":
-      return 1.15;
+      return 1.3;
     default:
       return 1;
   }

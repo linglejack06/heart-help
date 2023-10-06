@@ -3,7 +3,7 @@ import { percentage } from "./calculator"
 function App() {
   return (
     <h1>
-      {percentage}
+      {Math.round(percentage)}% Chance of Myocardial Infraction Onset
     </h1>
   )
 }

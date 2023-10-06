@@ -28,6 +28,14 @@ export const symptomsWithChestPain: Symptoms = {
   jawPain: true,
   chestPain: chestPain,
 }
+export const noSymptoms: Symptoms = {
+  shortnessOfBreath: false,
+  sweating: false,
+  nausea: false,
+  leftArmPain: false,
+  jawPain: false,
+  chestPain: null
+}
 export const noDiseases: Diseases = {
   cad: false,
   pad: false,
