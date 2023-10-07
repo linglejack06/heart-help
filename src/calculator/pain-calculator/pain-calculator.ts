@@ -6,7 +6,7 @@ const painCalculator = (symptoms: Symptoms): number => { // lower factors
     totalPainFactor += chestPainCalc(symptoms.chestPain);
   }
   if (symptoms.jawPain) {
-    totalPainFactor += 0.2;
+    totalPainFactor += 0.3;
   }
   if (symptoms.leftArmPain) {
     totalPainFactor += 0.3;
@@ -15,7 +15,7 @@ const painCalculator = (symptoms: Symptoms): number => { // lower factors
     totalPainFactor += 0.2;
   }
   if (symptoms.shortnessOfBreath) {
-    totalPainFactor += 0.3;
+    totalPainFactor += 0.4;
   }
   if(symptoms.sweating) {
     totalPainFactor += 0.2;
@@ -24,7 +24,7 @@ const painCalculator = (symptoms: Symptoms): number => { // lower factors
 }
 
 const chestPainCalc = (chestPain: ChestPain): number => {
-  if (chestPain.dull == true || chestPain.pressure == true) return 0.4;
+  if (chestPain.dull == true || chestPain.pressure == true) return 0.5;
   else return 0;
 }
 

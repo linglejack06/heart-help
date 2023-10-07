@@ -10,7 +10,7 @@ const ageCalc = (age: number): number => { // lower factor returning
   } else if (age < 80) {
     return 2;
   } else {
-    return 1.5;
+    return 2.25;
   }
 };
 
@@ -54,11 +54,11 @@ const diseaseCalc = (diseases: Diseases): number => {
 const activityCalc = (activity: ActivityLevel): number => {
   switch(activity) {
     case "very high":
-      return 0.4;
+      return 0.8;
     case "high":
-      return 0.7;
+      return 0.9;
     case "average":
-      return 1;
+      return 1.1;
     case "below average":
       return 1.3;
     default:

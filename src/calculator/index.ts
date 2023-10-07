@@ -1,7 +1,7 @@
 import { ActivityLevel, Risks, Symptoms, Gender } from "../types";
 import painCalculator from "./pain-calculator/pain-calculator";
 import riskCalculator from "./risk-calculator/risk-calculator";
-import { allDiseases, symptomsWithChestPain } from "./testValues";
+import { someDiseases3, symptomsWithoutChestPain2 } from "./testValues";
 
 const DEFAULT_PERCENT = 4;
 
@@ -13,12 +13,12 @@ const calculatePain = (risks: Risks, symptoms: Symptoms): number => {
 }
 const percentage = calculatePain(
   {
-    diseases: allDiseases,
-    gender: Gender.Male,
-    age: 19,
+    diseases: someDiseases3,
+    gender: Gender.Female,
+    age: 68,
     activity: ActivityLevel.VeryHigh
   },
-  symptomsWithChestPain
+  symptomsWithoutChestPain2
 )
 export { percentage }
 export default calculatePain;

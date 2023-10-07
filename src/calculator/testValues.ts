@@ -20,8 +20,24 @@ export const symptomsWithoutChestPain: Symptoms = {
   jawPain: false,
   chestPain: null,
 }
+export const symptomsWithoutChestPain2: Symptoms = {
+  shortnessOfBreath: true,
+  nausea: true,
+  leftArmPain: true,
+  jawPain: true,
+  sweating: false,
+  chestPain: null,
+}
 export const symptomsWithChestPain: Symptoms = {
   shortnessOfBreath: false,
+  sweating: true,
+  nausea: true,
+  leftArmPain: true,
+  jawPain: true,
+  chestPain: chestPain,
+}
+export const allSymptoms: Symptoms = {
+  shortnessOfBreath: true,
   sweating: true,
   nausea: true,
   leftArmPain: true,
@@ -54,6 +70,15 @@ export const someDiseases: Diseases = {
   smoking: false,
   ckd: true,
 } // returns 2.15
+export const someDiseases3: Diseases = {
+  diabetes: true,
+  ckd: true,
+  hbp: true,
+  cad: false,
+  pad: false,
+  smoking: false,
+  stroke: false
+}
 export const allDiseases: Diseases = {
   cad: true,
   pad: true,
