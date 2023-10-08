@@ -29,6 +29,8 @@ const riskReducer = (state: Risks = defaultRisk, action: RiskAction): Risks => {
         ...state,
         age: action.payload as number
       }
+    case "reset":
+      return defaultRisk
   }
 }
 
@@ -42,3 +44,5 @@ export const RiskContextProvider = ({ children }: ReactChildrenProps) => {
     </RiskContext.Provider>
   )
 }
+
+export default RiskContext

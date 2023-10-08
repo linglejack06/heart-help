@@ -33,6 +33,8 @@ const symptomReducer = (state: Symptoms = noSymptoms, action: SymptomAction): Sy
         ...state,
         chestPain: action.payload as ChestPain | null
       }
+    case "reset":
+      return noSymptoms
   }
 }
 

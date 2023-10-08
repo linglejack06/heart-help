@@ -41,11 +41,11 @@ export interface Risks {
   age: number,
 }
 export interface RiskAction {
-  type: "activity"|"diseases"|"gender"|"age",
+  type: "activity"|"diseases"|"gender"|"age"|"reset",
   payload: Diseases|Gender|ActivityLevel|number
 }
 export interface SymptomAction {
-  type: "shortnessOfBreath"|"nausea"|"sweating"|"leftArmPain"|"jawPain"|"chestPain",
+  type: "shortnessOfBreath"|"nausea"|"sweating"|"leftArmPain"|"jawPain"|"chestPain"|"reset",
   payload: boolean|null|ChestPain
 }
 export interface ReactChildrenProps {
