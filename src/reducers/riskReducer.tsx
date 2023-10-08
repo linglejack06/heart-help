@@ -7,7 +7,7 @@ const defaultRisk = {
   diseases: {} as Diseases,
   age: 0,
 }
-const riskReducer = (state: Risks, action: RiskAction): Risks => {
+const riskReducer = (state: Risks = defaultRisk, action: RiskAction): Risks => {
   switch(action.type) {
     case "activity":
       return {

@@ -44,7 +44,10 @@ export interface RiskAction {
   type: "activity"|"diseases"|"gender"|"age",
   payload: Diseases|Gender|ActivityLevel|number
 }
-
+export interface SymptomAction {
+  type: "shortnessOfBreath"|"nausea"|"sweating"|"leftArmPain"|"jawPain"|"chestPain",
+  payload: boolean|null|ChestPain
+}
 export interface ReactChildrenProps {
   children: React.ReactNode
 }
