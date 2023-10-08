@@ -1,5 +1,6 @@
-import { createContext, useReducer } from "react";
-import { ChestPain, SymptomAction, Symptoms, ReactChildrenProps } from "../types";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { createContext, useContext, useReducer } from "react";
+import { ChestPain, SymptomAction, Symptoms, ReactChildrenProps, SymptomContextType } from "../types";
 import { noSymptoms } from "../calculator/testValues";
 const symptomReducer = (state: Symptoms = noSymptoms, action: SymptomAction): Symptoms => {
   switch(action.type) {
@@ -38,13 +39,13 @@ const symptomReducer = (state: Symptoms = noSymptoms, action: SymptomAction): Sy
   }
 }
 
-const SymptomContext = createContext({});
+const SymptomContext = createContext<SymptomContextType | undefined>(undefined);
 
 export const SymptomContextProvider = (props: ReactChildrenProps) => {
-  const [symptoms, symptomsDispatch] = useReducer(symptomReducer, noSymptoms);
+  const [symptoms, dispatch] = useReducer(symptomReducer, noSymptoms);
 
   return (
-    <SymptomContext.Provider value={[symptoms, symptomsDispatch]}>
+    <SymptomContext.Provider value={{symptoms, dispatch}}>
       {props.children}
     </SymptomContext.Provider>
   )
