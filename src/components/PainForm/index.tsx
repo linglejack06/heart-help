@@ -22,6 +22,18 @@ function PainForm () {
         <Checkbox onChange={handleFormChange} name="shortnessOfBreath">
           Shortness Of Breath?
         </Checkbox>
+        <Checkbox onChange={handleFormChange} name="nausea">
+          Nausea?
+        </Checkbox>
+        <Checkbox onChange={handleFormChange} name="sweating">
+          Sweating?
+        </Checkbox>
+        <Checkbox onChange={handleFormChange} name="leftArmPain">
+          Left Arm Pain?
+        </Checkbox>
+        <Checkbox onChange={handleFormChange} name="jawPain">
+          Jaw Pain?
+        </Checkbox>
       </form>
     </div>
   )

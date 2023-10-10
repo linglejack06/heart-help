@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { ChestPain, SymptomAction, Symptoms, ReactChildrenProps, SymptomContextType } from "../types";
 import { noSymptoms } from "../calculator/testValues";
 const symptomReducer = (state: Symptoms = noSymptoms, action: SymptomAction): Symptoms => {

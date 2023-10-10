@@ -52,7 +52,7 @@ export interface ReactChildrenProps {
   children: React.ReactNode
 }
 export interface CheckboxProps {
-  name: string,
+  name: SymptomAction["type"]|RiskAction["type"]|"sharp"|"dull"|"pressure"|"stabbing",
   // eslint-disable-next-line @typescript-eslint/ban-types
   onChange: Function,
   children: React.ReactNode
@@ -60,4 +60,7 @@ export interface CheckboxProps {
 export interface SymptomContextType {
   symptoms: Symptoms,
   dispatch: (action: SymptomAction) => void
+}
+export interface ChestPainProps {
+  onChange: (sharp: boolean, dull: boolean, pressure: boolean, stabbing: boolean) => void
 }
