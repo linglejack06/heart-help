@@ -64,3 +64,7 @@ export interface SymptomContextType {
 export interface ChestPainProps {
   onChange: (sharp: boolean, dull: boolean, pressure: boolean, stabbing: boolean) => void
 }
+export interface PickOneProps {
+  options: string[],
+  groupName: string
+}

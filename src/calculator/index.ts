@@ -10,15 +10,15 @@ const calculatePain = (risks: Risks, symptoms: Symptoms): number => {
   totalFactor *= riskCalculator(risks);
   totalFactor *= painCalculator(symptoms);
   return totalFactor;
-}
+};
 const percentage = calculatePain(
   {
     diseases: someDiseases3,
     gender: Gender.Female,
     age: 68,
-    activity: ActivityLevel.VeryHigh
+    activity: ActivityLevel.VeryHigh,
   },
   symptomsWithoutChestPain2
-)
-export { percentage }
+);
+export { percentage };
 export default calculatePain;

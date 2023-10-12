@@ -6,13 +6,19 @@ const Checkbox = ({ onChange, name, children }: CheckboxProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(!checked);
     onChange(e.target.name, checked);
-  }
+  };
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <input type="checkbox" checked={checked} name={name} id={name} onChange={handleChange} />
+      <input
+        type="checkbox"
+        checked={checked}
+        name={name}
+        id={name}
+        onChange={handleChange}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Checkbox
+export default Checkbox;

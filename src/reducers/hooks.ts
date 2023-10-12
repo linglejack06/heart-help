@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import SymptomContext from "./symptomReducer"
+import { useContext } from "react";
+import SymptomContext from "./symptomReducer";
 
 const useSymptomDispatch = () => {
   const symptomContext = useContext(SymptomContext);
@@ -7,7 +7,7 @@ const useSymptomDispatch = () => {
     throw new Error("Context must be used within provider");
   }
   return symptomContext.dispatch;
-}
+};
 
 const useSymptomValues = () => {
   const symptomContext = useContext(SymptomContext);
@@ -15,6 +15,6 @@ const useSymptomValues = () => {
     throw new Error("Context must be used within provider");
   }
   return symptomContext.symptoms;
-}
+};
 
-export { useSymptomDispatch, useSymptomValues }
+export { useSymptomDispatch, useSymptomValues };

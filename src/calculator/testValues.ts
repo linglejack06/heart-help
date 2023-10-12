@@ -1,17 +1,17 @@
-import { ChestPain, Symptoms, Diseases } from "../types"
+import { ChestPain, Symptoms, Diseases } from "../types";
 
 export const chestPain: ChestPain = {
   dull: true,
   sharp: false,
   pressure: false,
   stabbing: false,
-}
+};
 export const chestPainWithoutFactors: ChestPain = {
   dull: false,
   sharp: true,
   pressure: false,
   stabbing: true,
-}
+};
 export const symptomsWithoutChestPain: Symptoms = {
   shortnessOfBreath: true,
   nausea: true,
@@ -19,7 +19,7 @@ export const symptomsWithoutChestPain: Symptoms = {
   leftArmPain: true,
   jawPain: false,
   chestPain: null,
-}
+};
 export const symptomsWithoutChestPain2: Symptoms = {
   shortnessOfBreath: true,
   nausea: true,
@@ -27,7 +27,7 @@ export const symptomsWithoutChestPain2: Symptoms = {
   jawPain: true,
   sweating: false,
   chestPain: null,
-}
+};
 export const symptomsWithChestPain: Symptoms = {
   shortnessOfBreath: false,
   sweating: true,
@@ -35,7 +35,7 @@ export const symptomsWithChestPain: Symptoms = {
   leftArmPain: true,
   jawPain: true,
   chestPain: chestPain,
-}
+};
 export const allSymptoms: Symptoms = {
   shortnessOfBreath: true,
   sweating: true,
@@ -43,15 +43,15 @@ export const allSymptoms: Symptoms = {
   leftArmPain: true,
   jawPain: true,
   chestPain: chestPain,
-}
+};
 export const noSymptoms: Symptoms = {
   shortnessOfBreath: false,
   sweating: false,
   nausea: false,
   leftArmPain: false,
   jawPain: false,
-  chestPain: null
-}
+  chestPain: null,
+};
 export const noDiseases: Diseases = {
   cad: false,
   pad: false,
@@ -60,7 +60,7 @@ export const noDiseases: Diseases = {
   hbp: false,
   smoking: false,
   ckd: false,
-} // returns 1;
+}; // returns 1;
 export const someDiseases: Diseases = {
   cad: true,
   pad: false,
@@ -69,7 +69,7 @@ export const someDiseases: Diseases = {
   hbp: false,
   smoking: false,
   ckd: true,
-} // returns 2.15
+}; // returns 2.15
 export const someDiseases3: Diseases = {
   diabetes: true,
   ckd: true,
@@ -77,8 +77,8 @@ export const someDiseases3: Diseases = {
   cad: false,
   pad: false,
   smoking: false,
-  stroke: false
-}
+  stroke: false,
+};
 export const allDiseases: Diseases = {
   cad: true,
   pad: true,
@@ -87,7 +87,7 @@ export const allDiseases: Diseases = {
   hbp: true,
   smoking: true,
   ckd: true,
-} // returns 3.5;
+}; // returns 3.5;
 export const someDiseases2: Diseases = {
   cad: false,
   pad: false,
@@ -96,4 +96,4 @@ export const someDiseases2: Diseases = {
   hbp: true,
   smoking: true,
   ckd: false,
-} // returns 1.95
+}; // returns 1.95

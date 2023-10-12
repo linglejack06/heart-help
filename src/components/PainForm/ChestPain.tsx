@@ -5,27 +5,9 @@ import { ChestPainProps } from "../../types";
 
 
 const ChestPainSelector = ({ onChange }: ChestPainProps) => {
-  const [sharp, setSharp] = useState(false);
-  const [dull, setDull] = useState(false);
-  const [pressure, setPressure] = useState(false);
-  const [stabbing, setStabbing] = useState(false);
-  const onCheckChange = (name: "sharp"|"dull"|"pressure"|"stabbing", checked: boolean) => {
-    switch(name) {
-      case "sharp":
-        return setSharp(checked);
-      case "dull":
-        return setDull(checked);
-      case "pressure":
-        return setPressure(checked);
-      case "stabbing":
-        return setStabbing(checked);
-    }
-  }
   return (
     <div>
-      <Checkbox onChange={onCheckChange} name="sharp">
-        Is the pain sharp?
-      </Checkbox>
+      
     </div>
   )
 }

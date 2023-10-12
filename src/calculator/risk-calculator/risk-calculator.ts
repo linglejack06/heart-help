@@ -1,7 +1,8 @@
-import { ActivityLevel, Diseases, Gender, Risks } from "../../types"
+import { ActivityLevel, Diseases, Gender, Risks } from "../../types";
 
-const ageCalc = (age: number): number => { // lower factor returning
-  if(age < 25) {
+const ageCalc = (age: number): number => {
+  // lower factor returning
+  if (age < 25) {
     return 0.02;
   } else if (age < 45) {
     return 0.5;
@@ -15,7 +16,7 @@ const ageCalc = (age: number): number => { // lower factor returning
 };
 
 const genderCalc = (gender: Gender): number => {
-  switch(gender) {
+  switch (gender) {
     case "male":
       return 1.15;
     case "female":
@@ -25,7 +26,7 @@ const genderCalc = (gender: Gender): number => {
     default:
       return 1.0;
   }
-}
+};
 
 const diseaseCalc = (diseases: Diseases): number => {
   let diseaseFactor: number = 1;
@@ -50,9 +51,9 @@ const diseaseCalc = (diseases: Diseases): number => {
     diseaseFactor += 0.4;
   }
   return diseaseFactor;
-}
+};
 const activityCalc = (activity: ActivityLevel): number => {
-  switch(activity) {
+  switch (activity) {
     case "very high":
       return 0.8;
     case "high":
@@ -64,7 +65,7 @@ const activityCalc = (activity: ActivityLevel): number => {
     default:
       return 1;
   }
-}
+};
 const riskCalculator = (risks: Risks): number => {
   const ageRisk = ageCalc(risks.age);
   const genderRisk = genderCalc(risks.gender);

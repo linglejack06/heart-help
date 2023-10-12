@@ -1,8 +1,9 @@
 import { ChestPain, Symptoms } from "../../types";
 
-const painCalculator = (symptoms: Symptoms): number => { // lower factors
+const painCalculator = (symptoms: Symptoms): number => {
+  // lower factors
   let totalPainFactor = 1;
-  if(symptoms.chestPain) {
+  if (symptoms.chestPain) {
     totalPainFactor += chestPainCalc(symptoms.chestPain);
   }
   if (symptoms.jawPain) {
@@ -17,16 +18,16 @@ const painCalculator = (symptoms: Symptoms): number => { // lower factors
   if (symptoms.shortnessOfBreath) {
     totalPainFactor += 0.4;
   }
-  if(symptoms.sweating) {
+  if (symptoms.sweating) {
     totalPainFactor += 0.2;
   }
   return totalPainFactor > 1 ? totalPainFactor : 0.5;
-}
+};
 
 const chestPainCalc = (chestPain: ChestPain): number => {
   if (chestPain.dull == true || chestPain.pressure == true) return 0.5;
   else return 0;
-}
+};
 
 export default painCalculator;
 export { chestPainCalc };
