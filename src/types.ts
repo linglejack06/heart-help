@@ -1,14 +1,14 @@
 export enum Gender {
   Male = "male",
   Female = "female",
-  NoResponse = "no response"
+  NoResponse = "no response",
 }
 
 export enum ActivityLevel {
   VeryHigh = "very high", // >60 minutes of exercise five days / week
   High = "high", // 45 minutes of exercise five days / week
   Average = "average", //  30 minutes of exercise (including walking etc) five days / week
-  BelowAverage = "below average"  // sedentary lifestyle (couch potato)
+  BelowAverage = "below average", // sedentary lifestyle (couch potato)
 }
 export interface Diseases {
   cad: boolean;
@@ -35,36 +35,47 @@ export interface ChestPain {
   stabbing: boolean; // unlikely
 }
 export interface Risks {
-  activity: ActivityLevel,
-  diseases: Diseases,
-  gender: Gender,
-  age: number,
+  activity: ActivityLevel;
+  diseases: Diseases;
+  gender: Gender;
+  age: number;
 }
 export interface RiskAction {
-  type: "activity"|"diseases"|"gender"|"age"|"reset",
-  payload: Diseases|Gender|ActivityLevel|number
+  type: "activity" | "diseases" | "gender" | "age" | "reset";
+  payload: Diseases | Gender | ActivityLevel | number;
 }
 export interface SymptomAction {
-  type: "shortnessOfBreath"|"nausea"|"sweating"|"leftArmPain"|"jawPain"|"chestPain"|"reset",
-  payload: boolean|null|ChestPain
+  type:
+    | "shortnessOfBreath"
+    | "nausea"
+    | "sweating"
+    | "leftArmPain"
+    | "jawPain"
+    | "chestPain"
+    | "reset";
+  payload: boolean | null | ChestPain;
 }
 export interface ReactChildrenProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 export interface CheckboxProps {
-  name: SymptomAction["type"]|RiskAction["type"]|"sharp"|"dull"|"pressure"|"stabbing",
+  name:
+    | SymptomAction["type"]
+    | RiskAction["type"]
+    | "sharp"
+    | "dull"
+    | "pressure"
+    | "stabbing";
   // eslint-disable-next-line @typescript-eslint/ban-types
-  onChange: Function,
-  children: React.ReactNode
+  onChange: Function;
+  children: React.ReactNode;
 }
 export interface SymptomContextType {
-  symptoms: Symptoms,
-  dispatch: (action: SymptomAction) => void
-}
-export interface ChestPainProps {
-  onChange: (sharp: boolean, dull: boolean, pressure: boolean, stabbing: boolean) => void
+  symptoms: Symptoms;
+  dispatch: (action: SymptomAction) => void;
 }
 export interface PickOneProps {
-  options: string[],
-  groupName: string
+  options: string[];
+  groupName: string;
+  onPickChange: (pickedOption: string) => void;
 }
