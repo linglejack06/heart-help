@@ -61,7 +61,13 @@ export interface ReactChildrenProps {
 export interface CheckboxProps {
   name:
     | SymptomAction["type"]
-    | RiskAction["type"]
+    | "cad"
+    | "pad"
+    | "stroke"
+    | "diabetes"
+    | "hbp"
+    | "smoking"
+    | "ckd"
     | "sharp"
     | "dull"
     | "pressure"
