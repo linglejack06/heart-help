@@ -74,6 +74,10 @@ export interface SymptomContextType {
   symptoms: Symptoms;
   dispatch: (action: SymptomAction) => void;
 }
+export interface RiskContextType {
+  risks: Risks;
+  dispatch: (action: RiskAction) => void;
+}
 export interface PickOneProps {
   options: string[];
   groupName: string;

@@ -6,6 +6,7 @@ import {
   ReactChildrenProps,
   RiskAction,
   Risks,
+  RiskContextType,
 } from "../types";
 
 const defaultRisk = {
@@ -41,12 +42,12 @@ const riskReducer = (state: Risks = defaultRisk, action: RiskAction): Risks => {
   }
 };
 
-const RiskContext = createContext({});
+const RiskContext = createContext<RiskContextType | undefined>(undefined);
 
 export const RiskContextProvider = ({ children }: ReactChildrenProps) => {
-  const [risk, riskDispatch] = useReducer(riskReducer, defaultRisk);
+  const [risks, dispatch] = useReducer(riskReducer, defaultRisk);
   return (
-    <RiskContext.Provider value={[risk, riskDispatch]}>
+    <RiskContext.Provider value={{ risks, dispatch }}>
       {children}
     </RiskContext.Provider>
   );

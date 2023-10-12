@@ -1,7 +1,8 @@
 function RiskForm() {
+  const riskDispatch = u;
   return (
     <div>
-      <h1>Risk</h1>
+      <h1>Risk Factors</h1>
     </div>
   );
 }
