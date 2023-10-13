@@ -1,11 +1,13 @@
 import { useEffect } from "react";
-import { useSymptomValues } from "../reducers/hooks";
+import { useRiskValues, useSymptomValues } from "../reducers/hooks";
 
 function Results() {
   const symptoms = useSymptomValues();
+  const risks = useRiskValues();
   useEffect(() => {
     console.log(symptoms);
-  }, [symptoms]);
+    console.log(risks);
+  }, [symptoms, risks]);
   return (
     <div>
       <h1>Your Results</h1>

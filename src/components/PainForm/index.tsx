@@ -9,6 +9,7 @@ function PainForm() {
   const navigate = useNavigate();
   const navigateToSubmissionPage = () => navigate("/results");
   const handleFormChange = (type: SymptomAction["type"], checked: boolean) => {
+    console.log(type, checked);
     symptomsDispatch({ type, payload: checked });
   };
   const handleSubmit = (e: React.FormEvent) => {

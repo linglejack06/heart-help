@@ -12,7 +12,15 @@ import {
 const defaultRisk = {
   activity: ActivityLevel.Average,
   gender: Gender.NoResponse,
-  diseases: {} as Diseases,
+  diseases: {
+    cad: false,
+    pad: false,
+    stroke: false,
+    diabetes: false,
+    hbp: false,
+    smoking: false,
+    ckd: false,
+  },
   age: 0,
 };
 const riskReducer = (state: Risks = defaultRisk, action: RiskAction): Risks => {

@@ -18,21 +18,12 @@ function RiskForm() {
     setAge(parsedAge);
     riskDispatch({ type: "age", payload: parsedAge });
   };
-  const handleGenderChange = (
-    pickedOption: ActivityLevel | Gender | string
-  ) => {
-    if (typeof pickedOption == "string") {
-      throw new Error("must accept gender value");
-    }
-    riskDispatch({ type: "gender", payload: pickedOption });
+  const handleGenderChange = (pickedOption: string) => {
+    console.log(pickedOption);
+    riskDispatch({ type: "gender", payload: pickedOption as Gender });
   };
-  const handleActivityChange = (
-    pickedOption: ActivityLevel | Gender | string
-  ) => {
-    if (typeof pickedOption == "string") {
-      throw new Error("must accept activity value");
-    }
-    riskDispatch({ type: "activity", payload: pickedOption });
+  const handleActivityChange = (pickedOption: string) => {
+    riskDispatch({ type: "activity", payload: pickedOption as ActivityLevel });
   };
 
   return (

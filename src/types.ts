@@ -87,5 +87,5 @@ export interface RiskContextType {
 export interface PickOneProps {
   options: string[];
   groupName: string;
-  onPickChange: (pickedOption: string | Gender | ActivityLevel) => void;
+  onPickChange: (pickedOption: string) => void;
 }
