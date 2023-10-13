@@ -89,3 +89,9 @@ export interface PickOneProps {
   groupName: string;
   onPickChange: (pickedOption: string) => void;
 }
+
+export enum RangeValues {
+  LOW = "low",
+  MID = "mild",
+  HIGH = "high",
+}

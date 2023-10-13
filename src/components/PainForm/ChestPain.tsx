@@ -16,7 +16,7 @@ const ChestPain = () => {
   const symptomsDispatch = useSymptomDispatch();
   const onShowingChange = (name: string, showing: boolean) => {
     console.log(name);
-    setIsShowing(!showing);
+    setIsShowing(showing);
   };
   const onChestPainChange = (pickedOption: string) => {
     const chestPainObject = {
