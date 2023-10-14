@@ -54,13 +54,13 @@ const diseaseCalc = (diseases: Diseases): number => {
 };
 const activityCalc = (activity: ActivityLevel): number => {
   switch (activity) {
-    case "very high":
+    case "Very high (>60 minutes of exercise 5 or more days/week)":
       return 0.8;
-    case "high":
+    case "High (45-60 minutes of exercise 5 days/week)":
       return 0.9;
-    case "average":
+    case "Average (30 minutes of moderate exercise 5 days/week)":
       return 1.1;
-    case "below average":
+    case "Below Average (sedentary lifestyle)":
       return 1.3;
     default:
       return 1;
