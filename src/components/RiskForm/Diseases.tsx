@@ -24,7 +24,7 @@ const Diseases = () => {
         Peripheral Artery Disease
       </Checkbox>
       <Checkbox onChange={handleDiseaseChange} name="stroke">
-        Stroke
+        History of Stroke
       </Checkbox>
       <Checkbox onChange={handleDiseaseChange} name="diabetes">
         Diabetes

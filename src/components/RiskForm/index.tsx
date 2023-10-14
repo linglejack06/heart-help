@@ -35,7 +35,9 @@ function RiskForm() {
           groupName="Gender"
           onPickChange={handleGenderChange}
         />
-        <label htmlFor="age">Age</label>
+        <label htmlFor="age">
+          <h3>Age</h3>
+        </label>
         <input
           type="number"
           onChange={handleAgeChange}

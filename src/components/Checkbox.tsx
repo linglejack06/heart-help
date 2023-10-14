@@ -8,8 +8,7 @@ const Checkbox = ({ onChange, name, children }: CheckboxProps) => {
     setChecked(!checked);
   };
   return (
-    <>
-      <label htmlFor={name}>{children}</label>
+    <div>
       <input
         type="checkbox"
         checked={checked}
@@ -17,7 +16,8 @@ const Checkbox = ({ onChange, name, children }: CheckboxProps) => {
         id={name}
         onChange={handleChange}
       />
-    </>
+      <label htmlFor={name}>{children}</label>
+    </div>
   );
 };
 

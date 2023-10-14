@@ -5,10 +5,10 @@ export enum Gender {
 }
 
 export enum ActivityLevel {
-  VeryHigh = "very high", // >60 minutes of exercise five days / week
-  High = "high", // 45 minutes of exercise five days / week
-  Average = "average", //  30 minutes of exercise (including walking etc) five days / week
-  BelowAverage = "below average", // sedentary lifestyle (couch potato)
+  VeryHigh = "Very high (>60 minutes of exercise 5 or more days/week)", // >60 minutes of exercise five days / week
+  High = "High (45-60 minutes of exercise 5 days/week)", // 45 minutes of exercise five days / week
+  Average = "Average (30 minutes of moderate exercise 5 days/week)", //  30 minutes of exercise (including walking etc) five days / week
+  BelowAverage = "Below Average (sedentary lifestyle)", // sedentary lifestyle (couch potato)
 }
 export interface Diseases {
   cad: boolean;
@@ -91,7 +91,7 @@ export interface PickOneProps {
 }
 
 export enum RangeValues {
-  LOW = "low",
-  MID = "mild",
-  HIGH = "high",
+  LOW = "Low",
+  MID = "Mild",
+  HIGH = "High",
 }
