@@ -13,6 +13,8 @@ const defaultRisk = {
   activity: ActivityLevel.Average,
   gender: Gender.NoResponse,
   diseases: {
+    historyOfCad: false,
+    highCholesterol: false,
     cad: false,
     pad: false,
     stroke: false,

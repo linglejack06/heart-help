@@ -60,6 +60,8 @@ export const noDiseases: Diseases = {
   hbp: false,
   smoking: false,
   ckd: false,
+  historyOfCad: false,
+  highCholesterol: false,
 }; // returns 1;
 export const someDiseases: Diseases = {
   cad: true,
@@ -69,6 +71,8 @@ export const someDiseases: Diseases = {
   hbp: false,
   smoking: false,
   ckd: true,
+  historyOfCad: false,
+  highCholesterol: false,
 }; // returns 2.15
 export const someDiseases3: Diseases = {
   diabetes: true,
@@ -78,6 +82,8 @@ export const someDiseases3: Diseases = {
   pad: false,
   smoking: false,
   stroke: false,
+  historyOfCad: false,
+  highCholesterol: false,
 };
 export const allDiseases: Diseases = {
   cad: true,
@@ -87,6 +93,8 @@ export const allDiseases: Diseases = {
   hbp: true,
   smoking: true,
   ckd: true,
+  historyOfCad: true,
+  highCholesterol: true,
 }; // returns 3.5;
 export const someDiseases2: Diseases = {
   cad: false,
@@ -96,4 +104,6 @@ export const someDiseases2: Diseases = {
   hbp: true,
   smoking: true,
   ckd: false,
+  historyOfCad: false,
+  highCholesterol: false,
 }; // returns 1.95
