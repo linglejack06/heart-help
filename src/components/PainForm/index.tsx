@@ -7,19 +7,26 @@ import ChestPain from "./ChestPain";
 function PainForm() {
   const symptomsDispatch = useSymptomDispatch();
   const navigate = useNavigate();
-  const navigateToSubmissionPage = () => navigate("/results");
+  const navigateToRiskPage = () => navigate("/risk-calculation");
   const handleFormChange = (type: SymptomAction["type"], checked: boolean) => {
     console.log(type, checked);
     symptomsDispatch({ type, payload: checked });
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigateToSubmissionPage();
+    navigateToRiskPage();
   };
   return (
     <div>
       <h1>Pain</h1>
       <form onSubmit={handleSubmit}>
+        <ChestPain />
+        <Checkbox onChange={handleFormChange} name="leftArmPain">
+          Left Arm Pain?
+        </Checkbox>
+        <Checkbox onChange={handleFormChange} name="jawPain">
+          Jaw Pain?
+        </Checkbox>
         <Checkbox onChange={handleFormChange} name="shortnessOfBreath">
           Shortness Of Breath?
         </Checkbox>
@@ -29,14 +36,7 @@ function PainForm() {
         <Checkbox onChange={handleFormChange} name="sweating">
           Sweating?
         </Checkbox>
-        <Checkbox onChange={handleFormChange} name="leftArmPain">
-          Left Arm Pain?
-        </Checkbox>
-        <Checkbox onChange={handleFormChange} name="jawPain">
-          Jaw Pain?
-        </Checkbox>
-        <ChestPain />
-        <button type="submit">Calculate % of Heart Attack Onset</button>
+        <button type="submit">Submit Pain</button>
       </form>
     </div>
   );

@@ -30,6 +30,12 @@ const genderCalc = (gender: Gender): number => {
 
 const diseaseCalc = (diseases: Diseases): number => {
   let diseaseFactor: number = 1;
+  if (diseases.historyOfCad == true) {
+    diseaseFactor += 0.5;
+  }
+  if (diseases.highCholesterol == true) {
+    diseaseFactor += 0.5;
+  }
   if (diseases.cad === true) {
     diseaseFactor += 0.8;
   }

@@ -11,6 +11,8 @@ export enum ActivityLevel {
   BelowAverage = "Below Average (sedentary lifestyle)", // sedentary lifestyle (couch potato)
 }
 export interface Diseases {
+  highCholesterol: boolean;
+  historyOfCad: boolean;
   cad: boolean;
   pad: boolean;
   stroke: boolean;
@@ -61,6 +63,8 @@ export interface ReactChildrenProps {
 export interface CheckboxProps {
   name:
     | SymptomAction["type"]
+    | "highCholesterol"
+    | "historyOfCad"
     | "cad"
     | "pad"
     | "stroke"
@@ -92,6 +96,6 @@ export interface PickOneProps {
 
 export enum RangeValues {
   LOW = "Low",
-  MID = "Mild",
+  MID = "Moderate",
   HIGH = "High",
 }

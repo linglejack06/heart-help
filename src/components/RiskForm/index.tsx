@@ -12,7 +12,7 @@ function RiskForm() {
   const activityValues = Object.values(ActivityLevel);
   const navigate = useNavigate();
 
-  const navigateToPainForm = () => navigate("/pain-calculation");
+  const navigateToResults = () => navigate("/results");
   const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const parsedAge = parseInt(e.target.value, 10);
     setAge(parsedAge);
@@ -29,7 +29,7 @@ function RiskForm() {
   return (
     <div>
       <h1>Risk Factors</h1>
-      <form onSubmit={navigateToPainForm}>
+      <form onSubmit={navigateToResults}>
         <PickOne
           options={genderValues}
           groupName="Gender"
@@ -51,7 +51,7 @@ function RiskForm() {
           groupName="Activity Level"
           onPickChange={handleActivityChange}
         />
-        <button type="submit">Add Risk Factors</button>
+        <button type="submit">Calculate Risk of Heart Attack Onset</button>
       </form>
     </div>
   );

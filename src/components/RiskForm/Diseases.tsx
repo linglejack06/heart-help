@@ -16,6 +16,11 @@ const Diseases = () => {
   };
   return (
     <div>
+      <h3>Family History</h3>
+      <Checkbox onChange={handleDiseaseChange} name="historyOfCad">
+        Premature family history of Coronary Artery Disease (before 55 male;
+        before 65 female)
+      </Checkbox>
       <h3>Diseases</h3>
       <Checkbox onChange={handleDiseaseChange} name="cad">
         Coronary Artery Disease
@@ -31,6 +36,9 @@ const Diseases = () => {
       </Checkbox>
       <Checkbox onChange={handleDiseaseChange} name="hbp">
         High Blood Pressure
+      </Checkbox>
+      <Checkbox onChange={handleDiseaseChange} name="highCholesterol">
+        High Cholesterol
       </Checkbox>
       <Checkbox onChange={handleDiseaseChange} name="smoking">
         Chronic Smoking
