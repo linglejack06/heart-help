@@ -17,9 +17,12 @@ function PainForm() {
     navigateToRiskPage();
   };
   return (
-    <div>
-      <h1>Pain</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="flex flex-col justify-start flex-auto w-full items-center">
+      <h1 className="mb-8 text-3xl font-extrabold mx-auto mt-4">Pain</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col justify-between flex-auto align-baseline"
+      >
         <ChestPain />
         <Checkbox onChange={handleFormChange} name="leftArmPain">
           Left Arm Pain?
@@ -36,7 +39,12 @@ function PainForm() {
         <Checkbox onChange={handleFormChange} name="sweating">
           Sweating?
         </Checkbox>
-        <button type="submit">Submit Pain</button>
+        <button
+          type="submit"
+          className="mx-auto bg-red-100 text-red-700 font-bold p-4 rounded-md hover:text-white hover:bg-red-700 hover:shadow-lg hover:cursor-pointer hover:p-6 transition-all hover:rounded-xl border-2 border-red-700"
+        >
+          Submit Pain
+        </button>
       </form>
     </div>
   );
