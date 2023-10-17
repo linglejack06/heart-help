@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import { RiskContextProvider } from "./reducers/riskReducer.tsx";
 import { SymptomContextProvider } from "./reducers/symptomReducer.tsx";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <RiskContextProvider>

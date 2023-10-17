@@ -3,19 +3,20 @@ import PainForm from "./components/PainForm";
 import RiskForm from "./components/RiskForm";
 import Results from "./components/Results";
 import Welcome from "./components/Welcome";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div>
-      <h1></h1>
+    <div className="min-w-screen min-h-screen text-red-700 bg-white flex flex-col justify-between">
+      <Header />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/risk-calculation" element={<RiskForm />} />
         <Route path="/pain-calculation" element={<PainForm />} />
         <Route path="/results" element={<Results />} />
       </Routes>
-      <footer>
-        <p>
+      <footer className="p-2">
+        <p className="text-md font-bold">
           Disclaimer: <br />
           This app is intended for informational purposes only and should not be
           considered a substitute for professional medical advice, diagnosis, or
