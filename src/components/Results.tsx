@@ -33,16 +33,21 @@ const Results = () => {
     emoji = "😟";
   }
   return (
-    <div>
-      <h1>
+    <div className="flex flex-col w-full justify-start items-center mb-20 p-4">
+      <h1 className="text-3xl font-extrabold mb-2">
         Your Results &emsp;
         <span role="img" aria-label={label}>
           {emoji}
         </span>
       </h1>
-      <h3>{range} Chance of Heart Attack Onset</h3>
-      <p>{information}</p>
-      <button onClick={() => window.open("tel:911")}>
+      <h3 className="text-2xl font-bold mb-2">
+        {range} Chance of Heart Attack Onset
+      </h3>
+      <p className="text-xl">{information}</p>
+      <button
+        onClick={() => window.open("tel:911")}
+        className="mx-auto bg-red-100 text-red-700 font-bold p-4 rounded-md hover:text-white hover:bg-red-700 hover:shadow-lg hover:cursor-pointer hover:p-6 transition-all hover:rounded-xl border-2 border-red-700 mt-4"
+      >
         Contact Emergency Services
       </button>
       <br />
