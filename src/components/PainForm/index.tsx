@@ -21,7 +21,7 @@ function PainForm() {
       <h1 className="mb-8 text-3xl font-extrabold mx-auto mt-4">Pain</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-between flex-auto align-baseline"
+        className="flex flex-col justify-between flex-auto items-center w-full"
       >
         <ChestPain />
         <Checkbox onChange={handleFormChange} name="leftArmPain">
@@ -41,7 +41,7 @@ function PainForm() {
         </Checkbox>
         <button
           type="submit"
-          className="mx-auto bg-red-100 text-red-700 font-bold p-4 rounded-md hover:text-white hover:bg-red-700 hover:shadow-lg hover:cursor-pointer hover:p-6 transition-all hover:rounded-xl border-2 border-red-700"
+          className="mx-auto bg-red-100 text-red-700 font-bold p-4 rounded-md hover:text-white hover:bg-red-700 hover:shadow-lg hover:cursor-pointer hover:p-6 transition-all hover:rounded-xl border-2 border-red-700 mt-4"
         >
           Submit Pain
         </button>

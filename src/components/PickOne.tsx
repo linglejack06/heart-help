@@ -8,10 +8,10 @@ const PickOne = ({ options, groupName, onPickChange }: PickOneProps) => {
     onPickChange(e.target.value);
   };
   return (
-    <div>
+    <div className="mt-4">
       <h3>{groupName}</h3>
       {options.map((option) => (
-        <li key={option}>
+        <li key={option} className="list-none">
           <input
             type="radio"
             id={option}
@@ -19,6 +19,7 @@ const PickOne = ({ options, groupName, onPickChange }: PickOneProps) => {
             value={option}
             checked={chosenOption === option}
             onChange={onChange}
+            className="mr-2 h-4 w-4 rounded-xl bg-gray-500 text-red-700 my-auto hover:ring-red-700 focus:ring-red-700"
           />
           <label htmlFor={option}>{option}</label>
         </li>

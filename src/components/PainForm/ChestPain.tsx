@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Checkbox from "../Checkbox";
 import { useSymptomDispatch } from "../../reducers/hooks";
 import PickOne from "../PickOne";
 
@@ -14,10 +13,6 @@ const DEFAULT_CHEST_PAIN = {
 const ChestPain = () => {
   const [isShowing, setIsShowing] = useState(false);
   const symptomsDispatch = useSymptomDispatch();
-  const onShowingChange = (name: string, showing: boolean) => {
-    console.log(name);
-    setIsShowing(showing);
-  };
   const onChestPainChange = (pickedOption: string) => {
     const chestPainObject = {
       ...DEFAULT_CHEST_PAIN,
@@ -26,10 +21,22 @@ const ChestPain = () => {
     symptomsDispatch({ type: "chestPain", payload: chestPainObject });
   };
   return (
-    <div>
-      <Checkbox onChange={onShowingChange} name="chestPain">
-        Chest Pain?
-      </Checkbox>
+    <div
+      className={`bg-red-100 text-red-700 font-bold text-lg align-baseline p-2 rounded-md border-red-700 border-2 w-full sm:w-1/3 lg:w-1/5 ${
+        isShowing ? "rounded-xl" : ""
+      }`}
+    >
+      <div>
+        <input
+          type="checkbox"
+          checked={isShowing}
+          name="showChestPain"
+          id="showingChestPain"
+          onChange={() => setIsShowing(!isShowing)}
+          className="h-5 w-5 rounded-md bg-gray-500 text-red-700 my-auto mr-16 hover:ring-red-700 focus:ring-red-700"
+        />
+        <label htmlFor="showingChestPain">Chest Pain?</label>
+      </div>
       {isShowing == true ? (
         <PickOne
           options={CHEST_PAIN_OPTIONS}

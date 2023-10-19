@@ -15,7 +15,7 @@ function App() {
         <Route path="/pain-calculation" element={<PainForm />} />
         <Route path="/results" element={<Results />} />
       </Routes>
-      <footer className="p-2">
+      <footer className="p-2 mt-4">
         <p className="text-md font-bold">
           Disclaimer: <br />
           This app is intended for informational purposes only and should not be

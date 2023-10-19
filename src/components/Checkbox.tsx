@@ -8,7 +8,7 @@ const Checkbox = ({ onChange, name, children }: CheckboxProps) => {
     setChecked(!checked);
   };
   return (
-    <div className="bg-red-100 text-red-700 font-bold text-lg align-baseline p-2 rounded-md border-red-700 border-2">
+    <div className="bg-red-100 text-red-700 font-bold text-lg align-baseline p-2 rounded-md border-red-700 border-2 mt-4 w-full sm:w-1/3 lg:w-1/5">
       <input
         type="checkbox"
         checked={checked}
@@ -17,7 +17,9 @@ const Checkbox = ({ onChange, name, children }: CheckboxProps) => {
         onChange={handleChange}
         className="h-5 w-5 rounded-md bg-gray-500 text-red-700 my-auto mr-16 hover:ring-red-700 focus:ring-red-700"
       />
-      <label htmlFor={name}>{children}</label>
+      <label htmlFor={name} className="mx-auto">
+        {children}
+      </label>
     </div>
   );
 };
