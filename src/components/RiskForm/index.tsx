@@ -37,8 +37,9 @@ function RiskForm() {
           options={genderValues}
           groupName="Gender"
           onPickChange={handleGenderChange}
+          forChestPain={false}
         />
-        <div className="flex flex-row mt-4 items-center justify-around w-full">
+        <div className="flex flex-row mt-4 items-center justify-center w-full">
           <label htmlFor="age" className="text-2xl font-bold mr-4">
             <h3>Age:</h3>
           </label>
@@ -48,7 +49,7 @@ function RiskForm() {
             value={age}
             id="age"
             name="age"
-            className="border-2 border-red-700 rounded-md bg-red-100 focus:ring-none focus:border-red-400 flex-auto"
+            className="border-2 border-red-700 rounded-md bg-red-100 focus:ring-none focus:border-red-400 flex-auto max-w-lg"
           />
         </div>
         <Diseases />
@@ -56,6 +57,7 @@ function RiskForm() {
           options={activityValues}
           groupName="Activity Level"
           onPickChange={handleActivityChange}
+          forChestPain={false}
         />
         <button
           type="submit"

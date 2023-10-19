@@ -15,7 +15,7 @@ const Diseases = () => {
     riskDispatch({ type: "diseases", payload: diseaseObjectForDispatch });
   };
   return (
-    <div className="flex flex-col flex-auto mt-4">
+    <div className="flex flex-col flex-auto mt-4 items-center w-full">
       <h3 className="text-2xl font-bold">Family History</h3>
       <Checkbox onChange={handleDiseaseChange} name="historyOfCad">
         Premature family history of Coronary Artery Disease (before 55 male;

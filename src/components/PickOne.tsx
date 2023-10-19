@@ -1,16 +1,33 @@
 import { PickOneProps } from "../types";
 import { useState } from "react";
 
-const PickOne = ({ options, groupName, onPickChange }: PickOneProps) => {
+const PickOne = ({
+  options,
+  groupName,
+  onPickChange,
+  forChestPain,
+}: PickOneProps) => {
   const [chosenOption, setChosenOption] = useState(options[0]);
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setChosenOption(e.target.value);
     onPickChange(e.target.value);
   };
   return (
-    <div className="w-full flex flex-col align-baseline mt-4">
-      <h3 className="text-2xl font-bold mb-2">{groupName}</h3>
-      <div className="bg-red-100 text-red-700 font-bold text-lg align-baseline p-2 rounded-md border-red-700 border-2 w-full sm:w-1/3 lg:w-1/5">
+    <div
+      className={`w-full flex flex-col ${
+        forChestPain ? "align-baseline" : "items-center"
+      } mt-4`}
+    >
+      <h3 className={`${forChestPain ? "" : "text-2xl font-bold mb-2"}`}>
+        {groupName}
+      </h3>
+      <div
+        className={`${
+          forChestPain
+            ? ""
+            : "bg-red-100 text-red-700 font-bold text-lg items-center p-2 rounded-md border-red-700 border-2 w-full sm:w-1/3 lg:w-1/5"
+        }`}
+      >
         {options.map((option) => (
           <li key={option} className="list-none">
             <input

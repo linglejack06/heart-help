@@ -42,6 +42,7 @@ const ChestPain = () => {
           options={CHEST_PAIN_OPTIONS}
           groupName="Type of Pain"
           onPickChange={onChestPainChange}
+          forChestPain={true}
         />
       ) : (
         <></>

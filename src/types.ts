@@ -92,6 +92,7 @@ export interface PickOneProps {
   options: string[];
   groupName: string;
   onPickChange: (pickedOption: string) => void;
+  forChestPain: boolean;
 }
 
 export enum RangeValues {
