@@ -15,13 +15,13 @@ const Diseases = () => {
     riskDispatch({ type: "diseases", payload: diseaseObjectForDispatch });
   };
   return (
-    <div>
-      <h3>Family History</h3>
+    <div className="flex flex-col flex-auto mt-4">
+      <h3 className="text-2xl font-bold">Family History</h3>
       <Checkbox onChange={handleDiseaseChange} name="historyOfCad">
         Premature family history of Coronary Artery Disease (before 55 male;
         before 65 female)
       </Checkbox>
-      <h3>Diseases</h3>
+      <h3 className="text-2xl font-bold mt-4">Diseases</h3>
       <Checkbox onChange={handleDiseaseChange} name="cad">
         Coronary Artery Disease
       </Checkbox>

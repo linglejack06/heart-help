@@ -17,7 +17,7 @@ function PainForm() {
     navigateToRiskPage();
   };
   return (
-    <div className="flex flex-col justify-start flex-auto w-full items-center">
+    <div className="flex flex-col justify-start flex-auto w-full items-center p-4">
       <h1 className="mb-8 text-3xl font-extrabold mx-auto mt-4">Pain</h1>
       <form
         onSubmit={handleSubmit}
