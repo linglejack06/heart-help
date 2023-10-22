@@ -1,44 +1,66 @@
 import { createContext, useReducer } from "react";
-import { ActivityLevel, Diseases, Gender, ReactChildrenProps, RiskAction, Risks } from "../types";
+import {
+  ActivityLevel,
+  Diseases,
+  Gender,
+  ReactChildrenProps,
+  RiskAction,
+  Risks,
+  RiskContextType,
+} from "../types";
 
 const defaultRisk = {
   activity: ActivityLevel.Average,
   gender: Gender.NoResponse,
-  diseases: {} as Diseases,
+  diseases: {
+    historyOfCad: false,
+    highCholesterol: false,
+    cad: false,
+    pad: false,
+    stroke: false,
+    diabetes: false,
+    hbp: false,
+    smoking: false,
+    ckd: false,
+  },
   age: 0,
-}
-const riskReducer = (state: Risks, action: RiskAction): Risks => {
-  switch(action.type) {
+};
+const riskReducer = (state: Risks = defaultRisk, action: RiskAction): Risks => {
+  switch (action.type) {
     case "activity":
       return {
         ...state,
-        activity: action.payload as ActivityLevel
-      }
+        activity: action.payload as ActivityLevel,
+      };
     case "diseases":
       return {
         ...state,
-        diseases: action.payload as Diseases
-      }
+        diseases: action.payload as Diseases,
+      };
     case "gender":
       return {
         ...state,
-        gender: action.payload as Gender
-      }
+        gender: action.payload as Gender,
+      };
     case "age":
       return {
         ...state,
-        age: action.payload as number
-      }
+        age: action.payload as number,
+      };
+    case "reset":
+      return defaultRisk;
   }
-}
+};
 
-const RiskContext = createContext({});
+const RiskContext = createContext<RiskContextType | undefined>(undefined);
 
 export const RiskContextProvider = ({ children }: ReactChildrenProps) => {
-  const [risk, riskDispatch] = useReducer(riskReducer, defaultRisk);
+  const [risks, dispatch] = useReducer(riskReducer, defaultRisk);
   return (
-    <RiskContext.Provider value={[risk, riskDispatch]}>
+    <RiskContext.Provider value={{ risks, dispatch }}>
       {children}
     </RiskContext.Provider>
-  )
-}
+  );
+};
+
+export default RiskContext;

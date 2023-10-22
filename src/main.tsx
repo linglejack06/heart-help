@@ -1,15 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { RiskContextProvider } from './reducers/riskReducer.tsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import { BrowserRouter as Router } from "react-router-dom";
+import { RiskContextProvider } from "./reducers/riskReducer.tsx";
+import { SymptomContextProvider } from "./reducers/symptomReducer.tsx";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <RiskContextProvider>
-    <Router>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Router>
+    <SymptomContextProvider>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
+    </SymptomContextProvider>
   </RiskContextProvider>
-)
+);

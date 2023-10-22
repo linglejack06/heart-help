@@ -1,7 +1,8 @@
-import { ActivityLevel, Diseases, Gender, Risks } from "../../types"
+import { ActivityLevel, Diseases, Gender, Risks } from "../../types";
 
-const ageCalc = (age: number): number => { // lower factor returning
-  if(age < 25) {
+const ageCalc = (age: number): number => {
+  // lower factor returning
+  if (age < 25) {
     return 0.02;
   } else if (age < 45) {
     return 0.5;
@@ -15,7 +16,7 @@ const ageCalc = (age: number): number => { // lower factor returning
 };
 
 const genderCalc = (gender: Gender): number => {
-  switch(gender) {
+  switch (gender) {
     case "male":
       return 1.15;
     case "female":
@@ -25,10 +26,16 @@ const genderCalc = (gender: Gender): number => {
     default:
       return 1.0;
   }
-}
+};
 
 const diseaseCalc = (diseases: Diseases): number => {
   let diseaseFactor: number = 1;
+  if (diseases.historyOfCad == true) {
+    diseaseFactor += 0.5;
+  }
+  if (diseases.highCholesterol == true) {
+    diseaseFactor += 0.5;
+  }
   if (diseases.cad === true) {
     diseaseFactor += 0.8;
   }
@@ -50,21 +57,21 @@ const diseaseCalc = (diseases: Diseases): number => {
     diseaseFactor += 0.4;
   }
   return diseaseFactor;
-}
+};
 const activityCalc = (activity: ActivityLevel): number => {
-  switch(activity) {
-    case "very high":
+  switch (activity) {
+    case "Very high (>60 minutes of exercise 5 or more days/week)":
       return 0.8;
-    case "high":
+    case "High (45-60 minutes of exercise 5 days/week)":
       return 0.9;
-    case "average":
+    case "Average (30 minutes of moderate exercise 5 days/week)":
       return 1.1;
-    case "below average":
+    case "Below Average (sedentary lifestyle)":
       return 1.3;
     default:
       return 1;
   }
-}
+};
 const riskCalculator = (risks: Risks): number => {
   const ageRisk = ageCalc(risks.age);
   const genderRisk = genderCalc(risks.gender);
