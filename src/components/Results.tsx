@@ -44,7 +44,7 @@ const Results = () => {
         {range} Chance of Heart Attack Onset
       </h3>
       <p className="text-lg font-bold">{information}</p>
-      {range == RangeValues.HIGH || RangeValues.MID ? (
+      {range == (RangeValues.HIGH || RangeValues.MID) ? (
         <button
           onClick={() => window.open("tel:911")}
           className="mx-auto bg-red-700 text-white font-bold p-4 rounded-md hover:text-white hover:bg-red-700 hover:shadow-lg hover:cursor-pointer hover:p-6 transition-all hover:rounded-xl border-2 border-red-700 mt-4"
